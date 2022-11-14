@@ -1,0 +1,25 @@
+{
+  "mobiles": [
+    {
+      "id": 3,
+      "name": "Samsung",
+      "price": 30000,
+      "ram": "8GB",
+      "storage": 125
+    },
+    {
+      "id": 4,
+      "name": "Opoo",
+      "price": 24000,
+      "ram": "10GB",
+      "storage": 16
+    },
+    {
+      "name": "IPhone",
+      "price": "75000",
+      "ram": "20GB",
+      "storage": "512",
+      "id": 5
+    }
+  ]
+}

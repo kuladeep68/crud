@@ -1,0 +1,64 @@
+<div *ngIf="mobiles;else err" class="container mob-table">
+  <div class="headers">
+    <h2 class="table-title">Mobiles</h2>
+    <button class="btn btn-primary add" (click)="AddMobile()">Add Mobiles</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Mobiles</th>
+        <th>Price (Rs)</th>
+        <th>Ram</th>
+        <th>Storage</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let mobile of mobiles">
+        <td>{{mobile.name}}</td>
+        <td>{{mobile.price}}</td>
+        <td>{{mobile.ram}}</td>
+        <td>{{mobile.storage}}</td>
+        <td>
+          <button class="btn btn-success" style="color: white;" (click)="openForm(mobile)">Edit</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" style="color:white ;" (click)="DeleteMob(mobile['id'])">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<ng-template #err class="text-danger">
+  error fetching data
+</ng-template>
+
+<div class="form-wrapper" *ngIf="showForm">
+  <div class="mobile-form">
+    <h2 class="text-center text-info">{{formHeader}}</h2>
+
+    <div class="group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="mobileName" name="name">
+    </div>
+    <div class="group">
+      <label for="">Price</label>
+      <input type="text" class="form-control" [(ngModel)]="price" name="price">
+    </div>
+    <div class="group">
+      <label for="">RAM</label>
+      <input type="text" class="form-control" [(ngModel)]="ram" name="price">
+    </div>
+    <div class="group">
+      <label for="">Storage</label>
+      <input type="text" class="form-control" [(ngModel)]="storage" name="storage">
+    </div>
+    <br>
+    <div class="action">
+      <button class="btn btn-primary" (click)="saveMobile()">Save</button>&nbsp;
+      <button class="btn btn-danger" (click)="closeMobile()">close</button>
+    </div>
+  </div>
+</div>
